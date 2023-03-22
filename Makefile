@@ -5,8 +5,10 @@ brain-games:
 publish:
 	npm publish --dry-run
 lint:
-		npx eslint .
+	npx eslint .
 brain-even:
-		node bin/brain-even.js
+	node bin/brain-even.js
 fix:
-		npx eslint --fix .
+	npx eslint --fix .
+brain-calc:
+	node bin/brain-calc.js
