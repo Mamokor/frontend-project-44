@@ -22,7 +22,37 @@ const LaunchGame = (gameInstructions, game) => {
   console.log(`Congratulations, ${playerName}!`);
 };
 
+const getOper = (operator, num1, num2) => {
+  let correctAnswer = 0;
+  let question = '';
+
+  switch (operator) {
+    case '+':
+      correctAnswer += num1 + num2;
+      question += `${num1} + ${num2}`;
+      break;
+    case '-':
+      correctAnswer += num1 - num2;
+      question += `${num1} - ${num2}`;
+      break;
+    case '*':
+      correctAnswer += num1 * num2;
+      question += `${num1} * ${num2}`;
+      break;
+    default:
+      break;
+  }
+  return [String(correctAnswer), question];
+};
+
+const getRandomOperators = () => {
+  const operators = '+-*';
+  return operators[getRandomNumber(0, operators.length - 1)];
+};
+
 export {
   getRandomNumber,
   LaunchGame,
+  getOper,
+  getRandomOperators,
 };
