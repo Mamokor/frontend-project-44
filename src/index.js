@@ -50,9 +50,21 @@ const getRandomOperators = () => {
   return operators[getRandomNumber(0, operators.length - 1)];
 };
 
+const getNOD = (a, b) => {
+  let num1 = a;
+  let num2 = b;
+  while (num1 !== num2) {
+    if (num1 > num2) {
+      num1 -= num2;
+    } else num2 -= num1;
+  }
+  return num1;
+};
+
 export {
   getRandomNumber,
   LaunchGame,
   getOper,
   getRandomOperators,
+  getNOD,
 };
