@@ -61,10 +61,24 @@ const getNOD = (a, b) => {
   return num1;
 };
 
+const getProgression = () => {
+  const arr = [];
+  const progresStep = getRandomNumber(5, 20);
+  const progresLength = getRandomNumber(2, 20);
+  for (let i = progresStep; i <= progresStep * progresLength; i += progresStep) {
+    arr.push(i);
+  }
+  arr[getRandomNumber(1, arr.length - 2)] = '..';
+  const correctAnswer = arr[arr.indexOf('..') - 1] + progresStep;
+  const result = arr.join(' ');
+  return [correctAnswer, result];
+};
+
 export {
   getRandomNumber,
   LaunchGame,
   getOper,
   getRandomOperators,
   getNOD,
+  getProgression,
 };
