@@ -63,7 +63,7 @@ const getNOD = (a, b) => {
 
 const getProgression = () => {
   const arr = [];
-  const progresStep = getRandomNumber(5, 20);
+  const progresStep = getRandomNumber(1, 20);
   const progresLength = getRandomNumber(2, 20);
   for (let i = progresStep; i <= progresStep * progresLength; i += progresStep) {
     arr.push(i);
