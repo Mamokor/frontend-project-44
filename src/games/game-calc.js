@@ -1,20 +1,47 @@
-import {
-  getOper, LaunchGame, getRandomNumber, getRandomOperators,
+import { LaunchGame,
 } from '../index.js';
+import getRandomNumber from '../utils.js';
 
-const gameInstructions = 'What is the result of the expression?';
+const getOper = (operator, num1, num2) => {
+  let correctAnswer = 0;
+  let question = '';
 
-const gameCalc = () => {
+  switch (operator) {
+    case '+':
+      correctAnswer += num1 + num2;
+      question += `${num1} + ${num2}`;
+      break;
+    case '-':
+      correctAnswer += num1 - num2;
+      question += `${num1} - ${num2}`;
+      break;
+    case '*':
+      correctAnswer += num1 * num2;
+      question += `${num1} * ${num2}`;
+      break;
+    default:
+      break;
+  }
+  return [String(correctAnswer), question];
+};
+
+const gameDescription = 'What is the result of the expression?';
+
+const getRandomOperators = () => {
+  const operators = '+-*';
+  return operators[getRandomNumber(0, operators.length - 1)];
+};
+
+const getAnswerAndQuestion = () => {
   const randomNum1 = getRandomNumber(1, 100);
   const randomNum2 = getRandomNumber(1, 100);
   const operators = getRandomOperators();
   const answers = getOper(operators, randomNum1, randomNum2);
-  const question = answers[1];
-  const correctAnswer = answers[0];
+  const [correctAnswer, question] = answers;
 
-  return [question, correctAnswer];
+  return answers;
 };
 
-const startGameCalc = () => LaunchGame(gameInstructions, gameCalc);
+const startGameCalc = () => LaunchGame(gameDescription, getAnswerAndQuestion);
 
 export default startGameCalc;
