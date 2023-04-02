@@ -1,5 +1,4 @@
-import { LaunchGame,
-} from '../index.js';
+import LaunchGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const getOper = (operator, num1, num2) => {

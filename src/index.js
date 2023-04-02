@@ -20,6 +20,4 @@ const LaunchGame = (gameDescription, game) => {
   console.log(`Congratulations, ${playerName}!`);
 };
 
-export {
-  LaunchGame,
-};
+export default LaunchGame;

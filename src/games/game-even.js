@@ -1,4 +1,4 @@
-import { LaunchGame } from '../index.js';
+import LaunchGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
