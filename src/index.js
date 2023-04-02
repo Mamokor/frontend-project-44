@@ -3,11 +3,10 @@ import greetUser from './cli.js';
 
 const LaunchGame = (gameDescription, game) => {
   const playerName = greetUser();
-  const playThreeRounds = 3;
+  const roundsCount = 3;
   console.log(gameDescription);
-  for (let attempt = 0; attempt < playThreeRounds; attempt += 1) {
-    const getGameData = game();
-    const [question, correctAnswer] = getGameData;
+  for (let attempt = 0; attempt < roundsCount; attempt += 1) {
+    const [question, correctAnswer] = game();
     console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('Your answer: ');
     if (playerAnswer === correctAnswer) {

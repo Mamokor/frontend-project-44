@@ -36,9 +36,10 @@ const getAnswerAndQuestion = () => {
   const randomNum2 = getRandomNumber(1, 100);
   const operators = getRandomOperators();
   const answers = getOper(operators, randomNum1, randomNum2);
-  const [correctAnswer, question] = answers;
+  const question = answers[1];
+  const correctAnswer = answers[0];
 
-  return answers;
+  return [question, correctAnswer];
 };
 
 const startGameCalc = () => LaunchGame(gameDescription, getAnswerAndQuestion);
