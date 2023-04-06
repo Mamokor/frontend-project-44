@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
 import greetUser from './cli.js';
 
+const roundsCount = 3;
 const LaunchGame = (gameDescription, game) => {
   const playerName = greetUser();
-  const roundsCount = 3;
   console.log(gameDescription);
   for (let attempt = 0; attempt < roundsCount; attempt += 1) {
     const [question, correctAnswer] = game();
